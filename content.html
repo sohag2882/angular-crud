@@ -1,0 +1,64 @@
+<style>
+    span {
+        color: #087f85;
+    }
+</style>
+
+<!--<a  class="btn btn-warning" data-toggle="modal" href="#dataModal"><i class="glyphicon glyphicon-plus"></i> Add Data</a>-->
+<!--<hr>-->
+<div class="col-md-5">
+    <form novalidate name="addForm" ng-submit="addForm.$valid && addData()">
+        <input type="hidden" name="id" ng-model="id"/>
+
+        <div class="form-group">
+            <label>Person name</label>
+            <input type="text" class="form-control" name="person_name" placeholder="Person Name" required
+                   ng-model="person_name">
+            <span ng-show="addForm.person_name.$error.required">Required person name</span>
+        </div>
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" name="product_name" required placeholder="Product Name"
+                   ng-model="product_name">
+            <span ng-show="addForm.product_name.$error.required">Required product name</span>
+        </div>
+        <div class="form-group">
+            <label>Product Quantity</label>
+            <input type="text" class="form-control" name="quantity" required placeholder="Product Quantity"
+                   ng-model="quantity">
+            <span ng-show="addForm.quantity.$error.required">Required Quantity</span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save Data</button>
+        <button type="button" class="btn btn-primary" ng-click="updateData(id)">Update Data</button>
+    </form>
+
+</div>
+<div class="col-md-7">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Person Name</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in item">
+            <td>{{p.id}}</td>
+            <td>{{p.person_name}}</td>
+            <td>{{p.product_name}}</td>
+            <td>{{p.quantity}}</td>
+            <td>
+                <a href="#" class="btn btn-xs btn-info edit" ng-click="selectData(p.id)"><i
+                        class="glyphicon glyphicon-edit" title="Edit"></i></a>
+                <a href="#" class="btn btn-xs btn-danger" ng-click="deleteData(p.id)"><i
+                        class="glyphicon glyphicon-trash" title="Delete"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+

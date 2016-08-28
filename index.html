@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Admin Theme (Angular)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+</head>
+<body ng-controller="product">
+<!-- Header -->
+<header-page></header-page>
+<!-- /Header -->
+<!-- Main -->
+<div class="container">
+    <div class="row">
+        <!--Menu-->
+        <menu-page></menu-page>
+        <!-- /col-3 -->
+        <!--Menu-->
+        <div class="col-md-9">
+            <!-- column 2 -->
+            <ul class="list-inline pull-right">
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+                <li><a title="Add Widget" data-toggle="modal" href=""><span
+                        class="glyphicon glyphicon-plus-sign"></span> Add Widget</a></li>
+            </ul>
+            <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> My Dashboard</strong></a>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <body-page></body-page>
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-span-9-->
+    </div>
+</div>
+<!-- /Main -->
+<footer-page></footer-page>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
